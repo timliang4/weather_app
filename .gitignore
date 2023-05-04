@@ -1,0 +1,2 @@
+# hide all files in __pycache__ folder
+__pychache__/*
