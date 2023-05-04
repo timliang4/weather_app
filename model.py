@@ -23,7 +23,7 @@ class Model:
             return f'error: location not found'
 
         weather_data = dict(filter(self.filter_function, weather_data['current'].items()))
-        output_string = ''
+        weather_data_list = []
         for item in weather_data.items():
-            output_string += f'{item[0]}: {item[1]}\n'
-        return output_string
+            weather_data_list.append(f'{item[0]}: {item[1]}')
+        return weather_data_list
