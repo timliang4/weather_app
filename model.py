@@ -6,7 +6,7 @@ class Model:
                               'condition', 'pressure_in', 'precip_mm', 'feeelslike_c', 'vis_km', 'gust_mph', 'gust_kph', 
                               'feelslike_c']
         self.keys_toNames = {'last_updated': 'Last Updated', "temp_f": "Temperature (Farenheit)", "wind_mph": "Wind (Mph)",
-                             "precip_in": "Precipitation (Inches)", "humidity": "Humditiy", "cloud": "Cloudiness", 
+                             "precip_in": "Precipitation (Inches)", "humidity": "Humidity", "cloud": "Cloudiness", 
                              "feelslike_f": "Feels like (Farneheit)", "vis_miles": "Visibility (Miles)", "uv": "UV Index"}
         
     def filter_function(self, pair):
