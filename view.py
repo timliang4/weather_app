@@ -24,14 +24,23 @@ class View(tk.Tk):
                                             command = lambda: self.controller._button_func(city.get()))
         display_weather_button.pack(pady = self.PAD)
 
-        self.output_label = ttk.Label(self, textvariable = self.output_var)
-        self.output_label.pack()
+        self.data = []
+        for i in range(10):
+            label = ttk.Label(self, text = "")
+            label.pack(pady = self.PAD)
+            self.data.append(label)
 
 
     def _display_weather_data(self, weather_data):
-        for item in weather_data.items():
-            label = ttk.Label(self, text = f"{item[0]}: {item[1]}")
-            label.pack(pady = self.PAD)
+        i = 0
+        for k, v in weather_data.items():
+            self.data[i].config(text = f"{k}: {v}")
+            i += 1
+
+    def _print_message(self, msg):
+        self.data[0].config(text = msg)
+        for i in range(9):
+            self.data[i + 1].config(text = "")
 
     def main(self):
         self.mainloop()

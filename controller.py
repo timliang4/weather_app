@@ -12,10 +12,10 @@ class Controller:
     def _button_func(self, location):
         self.view.output_var.set('')
         weather_data = self.model._get_weather_data(location)
-        self.view.output_var.set(weather_data)
-        # for item in weather_data.items():
-        #     self.view.output_var += f"{item[0]}: {item[1]}\n"
-            
+        if isinstance(weather_data, str):
+            self.view._print_message(weather_data)
+        else:
+            self.view._display_weather_data(weather_data)
 
 if __name__ == '__main__':
     controller = Controller()
